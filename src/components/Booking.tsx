@@ -50,7 +50,7 @@ export default function Booking() {
         const formattedDate = format(date, 'dd MMMM yyyy');
         const msg = `Halo Lumina Studio! Saya ingin booking sesi foto:%0A%0A*Nama:* ${formData.name}%0A*Nomor WA:* ${formData.phone}%0A*Paket:* ${selectedPkgData?.name}%0A*Tanggal:* ${formattedDate}%0A*Jam:* ${selectedTime}%0A%0AApakah slot ini masih tersedia?`;
 
-        window.open(`https://wa.me/628111222333?text=${msg}`, '_blank');
+        window.open(`https://wa.me/6281218939696?text=Halo Lumina${msg}`, '_blank');
     };
 
     return (

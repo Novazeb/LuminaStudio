@@ -18,7 +18,7 @@ export default function About() {
                     <h3 className="font-sans text-sm tracking-[0.2em] text-primary/60 uppercase">The Visionary</h3>
                     <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">Novasco</h2>
                     <p className="font-sans text-lg font-light leading-relaxed text-stone-600 mb-6">
-                        With over a decade of experience in fashion and editorial photography, Sarah brings a meticulous eye for detail to every shot. Her philosophy is simple: capture the authentic essence of the moment through masterful lighting and composition.
+                        With over a decade of experience in fashion and editorial photography, Nova brings a meticulous eye for detail to every shot. Her philosophy is simple: capture the authentic essence of the moment through masterful lighting and composition.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-stone-200">

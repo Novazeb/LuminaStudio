@@ -27,7 +27,7 @@ export default function Contact() {
                             </h3>
                             <div className="space-y-4 font-sans text-stone-400 font-light">
                                 <a href="tel:+628111222333" className="block hover:text-white transition-colors">
-                                    +62 811 1222 333 (WhatsApp Only)
+                                    +62 812 1893 9696 (WhatsApp Only)
                                 </a>
                                 <a href="mailto:hello@luminastudio.com" className="block hover:text-white transition-colors flex items-center gap-2">
                                     <Mail className="w-4 h-4" /> hello@luminastudio.com
@@ -60,10 +60,10 @@ export default function Contact() {
 
                         <div className="pt-8 border-t border-stone-800">
                             <div className="flex gap-4 border border-stone-800 p-2 inline-flex bg-stone-900">
-                                <a href="#" className="p-3 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Instagram">
+                                <a href="https://www.instagram.com/zebua_1011" className="p-3 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Instagram">
                                     <Instagram className="w-5 h-5" />
                                 </a>
-                                <a href="#" className="p-3 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Twitter">
+                                <a href="x.com" className="p-3 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Twitter">
                                     <Twitter className="w-5 h-5" />
                                 </a>
                             </div>
