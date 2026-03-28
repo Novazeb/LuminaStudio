@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -9,6 +12,8 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 
 export default function Home() {
+  const [selectedPackage, setSelectedPackage] = useState("bronze");
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
@@ -69,7 +74,7 @@ export default function Home() {
               Transparent, tailored packages designed to suit your needs without hidden costs.
             </p>
           </div>
-          <Pricing />
+          <Pricing onSelectPackage={setSelectedPackage} />
         </div>
       </section>
 
@@ -82,7 +87,7 @@ export default function Home() {
               Secure your session easily. Choose a date, pick a slot, and confirm via WhatsApp.
             </p>
           </div>
-          <Booking />
+          <Booking selectedPackageProp={selectedPackage} />
         </div>
       </section>
 

@@ -1,8 +1,10 @@
+"use client";
+
 import { Check } from "lucide-react";
-import Link from "next/link";
 
 const packages = [
     {
+        id: "bronze",
         name: "Bronze",
         price: "IDR 500.000",
         description: "Perfect for quick portraits or graduation solo shots.",
@@ -16,6 +18,7 @@ const packages = [
         highlight: false
     },
     {
+        id: "silver",
         name: "Silver",
         price: "IDR 1.250.000",
         description: "Ideal for couples, pre-weddings, or small families.",
@@ -30,6 +33,7 @@ const packages = [
         highlight: true
     },
     {
+        id: "gold",
         name: "Gold",
         price: "IDR 2.500.000",
         description: "The ultimate package for large groups and commercial shoots.",
@@ -52,7 +56,17 @@ const addons = [
     { name: "Costume Rental", price: "IDR 150.000", per: "item" }
 ];
 
-export default function Pricing() {
+interface PricingProps {
+    onSelectPackage?: (packageId: string) => void;
+}
+
+export default function Pricing({ onSelectPackage }: PricingProps) {
+    const handleChoosePackage = (packageId: string) => {
+        if (onSelectPackage) {
+            onSelectPackage(packageId);
+        }
+    };
+
     return (
         <div className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 px-4 md:px-0">
@@ -87,15 +101,16 @@ export default function Pricing() {
                             ))}
                         </ul>
 
-                        <Link
+                        <a
                             href="#booking"
-                            className={`w-full py-4 text-center text-sm font-medium tracking-widest uppercase transition-colors ${pkg.highlight
+                            onClick={() => handleChoosePackage(pkg.id)}
+                            className={`w-full py-4 text-center text-sm font-medium tracking-widest uppercase transition-colors block ${pkg.highlight
                                     ? "bg-white text-primary hover:bg-stone-200"
                                     : "bg-primary text-white hover:bg-primary/90"
                                 }`}
                         >
                             Choose {pkg.name}
-                        </Link>
+                        </a>
                     </div>
                 ))}
             </div>

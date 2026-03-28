@@ -15,8 +15,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Studio Foto - Capture Your Best Moments",
-  description: "Professional photography studio for weddings, graduations, and commercial needs.",
+  title: "Maka Studio - Indoor Photo Studio Medan",
+  description: "Maka Studio — Indoor Studio & Props Artistic. Modern | Classic | Natural Light & Artificial Light. Jalan Beo No. 78 A, Medan. By appointment only.",
 };
 
 export default function RootLayout({

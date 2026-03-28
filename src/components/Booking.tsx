@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import { Calendar as CalendarIcon, Clock, User, Phone, Send } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, User, Send } from "lucide-react";
 
 const packages = [
     { id: "bronze", name: "Bronze Package", price: "IDR 500.000" },
@@ -14,17 +14,28 @@ const packages = [
 
 const timeSlots = [
     { time: "09:00", available: true },
-    { time: "10:30", available: false },
+    { time: "10:30", available: true },
     { time: "13:00", available: true },
     { time: "15:00", available: true },
-    { time: "16:30", available: false },
+    { time: "16:30", available: true },
 ];
 
-export default function Booking() {
+interface BookingProps {
+    selectedPackageProp?: string;
+}
+
+export default function Booking({ selectedPackageProp }: BookingProps) {
     const [date, setDate] = useState<Date | undefined>(new Date());
     const [selectedTime, setSelectedTime] = useState<string | null>(null);
     const [selectedPackage, setSelectedPackage] = useState(packages[0].id);
-    const [formData, setFormData] = useState({ name: "", phone: "" });
+    const [formData, setFormData] = useState({ name: "" });
+
+    // Sync with parent's selectedPackageProp when it changes
+    useEffect(() => {
+        if (selectedPackageProp) {
+            setSelectedPackage(selectedPackageProp);
+        }
+    }, [selectedPackageProp]);
 
     const selectedPkgData = packages.find(p => p.id === selectedPackage);
 
@@ -44,13 +55,13 @@ export default function Booking() {
 
     const handleBooking = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!date || !selectedTime || !formData.name || !formData.phone) return;
+        if (!date || !selectedTime || !formData.name) return;
 
         // Format message for WhatsApp
         const formattedDate = format(date, 'dd MMMM yyyy');
-        const msg = `Halo Lumina Studio! Saya ingin booking sesi foto:%0A%0A*Nama:* ${formData.name}%0A*Nomor WA:* ${formData.phone}%0A*Paket:* ${selectedPkgData?.name}%0A*Tanggal:* ${formattedDate}%0A*Jam:* ${selectedTime}%0A%0AApakah slot ini masih tersedia?`;
+        const msg = `Halo Maka Studio! Saya ingin booking sesi foto:%0A%0A*Nama:* ${formData.name}%0A*Paket:* ${selectedPkgData?.name}%0A*Tanggal:* ${formattedDate}%0A*Jam:* ${selectedTime}%0A%0AApakah slot ini masih tersedia?`;
 
-        window.open(`https://wa.me/6281218939696?text=Halo Lumina${msg}`, '_blank');
+        window.open(`https://wa.me/628973239312?text=${msg}`, '_blank');
     };
 
     return (
@@ -91,10 +102,10 @@ export default function Booking() {
                                             disabled={!slot.available}
                                             onClick={() => setSelectedTime(slot.time)}
                                             className={`py-3 text-sm font-medium transition-all border ${!slot.available
-                                                    ? "bg-stone-100 text-stone-400 border-stone-200 cursor-not-allowed line-through"
-                                                    : selectedTime === slot.time
-                                                        ? "bg-primary text-white border-primary shadow-md"
-                                                        : "bg-white text-stone-700 border-stone-300 hover:border-primary"
+                                                ? "bg-stone-100 text-stone-400 border-stone-200 cursor-not-allowed line-through"
+                                                : selectedTime === slot.time
+                                                    ? "bg-primary text-white border-primary shadow-md"
+                                                    : "bg-white text-stone-700 border-stone-300 hover:border-primary"
                                                 }`}
                                         >
                                             {slot.time}
@@ -126,20 +137,6 @@ export default function Booking() {
                                     />
                                 </div>
                                 <div>
-                                    <label className="flex items-center text-sm font-medium text-stone-700 mb-2">
-                                        <Phone className="w-4 h-4 mr-2" /> WhatsApp Number
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        required
-                                        pattern="^[0-9\-\+]{9,15}$"
-                                        value={formData.phone}
-                                        onChange={e => setFormData({ ...formData, phone: e.target.value.replace(/[^0-9+]/g, '') })}
-                                        className="w-full border border-stone-300 p-3 bg-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
-                                        placeholder="+62"
-                                    />
-                                </div>
-                                <div>
                                     <label className="text-sm font-medium text-stone-700 mb-2 block">
                                         Choose Package
                                     </label>
@@ -165,7 +162,7 @@ export default function Booking() {
                             </div>
                             <button
                                 type="submit"
-                                disabled={!date || !selectedTime || !formData.name || !formData.phone}
+                                disabled={!date || !selectedTime || !formData.name}
                                 className="w-full flex items-center justify-center py-4 bg-primary text-white hover:bg-primary/90 transition-colors uppercase tracking-widest text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed group"
                             >
                                 Booking via WhatsApp

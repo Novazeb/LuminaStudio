@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
     {
         id: 1,
-        text: "The lighting, the direction, the subtle details—everything was perfect. Lumina captured our pre-wedding exactly how we envisioned it: candid yet editorial.",
+        text: "The lighting, the direction, the subtle details—everything was perfect. Maka Studio captured our pre-wedding exactly how we envisioned it: candid yet editorial.",
         author: "Amanda & Reza",
         context: "Pre-wedding Session",
     },
