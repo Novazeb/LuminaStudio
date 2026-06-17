@@ -1,10 +1,11 @@
-
+# How to run?
+'''
 npm run dev
-# or
+or
 yarn dev
-# or
+or
 pnpm dev
-# or
+or
 bun dev
 ```
 
