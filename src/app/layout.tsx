@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Maka Studio - Indoor Photo Studio Medan",
+  title: "Lumina Studio - Indoor Photo Studio Medan",
   description: "Maka Studio — Indoor Studio & Props Artistic. Modern | Classic | Natural Light & Artificial Light. Jalan Beo No. 78 A, Medan. By appointment only.",
 };
 
