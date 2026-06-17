@@ -9,7 +9,7 @@ export default function Navbar() {
                     <div className="flex-shrink-0 flex items-center gap-2">
                         <Link href="/" className="flex items-center gap-2 group">
                             <Camera className="w-8 h-8 text-primary group-hover:opacity-80 transition-opacity" />
-                            <span className="font-serif text-2xl font-bold tracking-tight text-primary">Maka Studio</span>
+                            <span className="font-serif text-2xl font-bold tracking-tight text-primary">Lumina Studio</span>
                         </Link>
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
