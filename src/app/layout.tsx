@@ -7,16 +7,18 @@ import Footer from "@/components/Footer";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Lumina Studio - Indoor Photo Studio Medan",
-  description: "Maka Studio — Indoor Studio & Props Artistic. Modern | Classic | Natural Light & Artificial Light. Jalan Beo No. 78 A, Medan. By appointment only.",
+  title: "Lumina Studio Photo - Indoor Photo Studio Medan",
+  description: "Lumina Studio Photo — Indoor Studio & Props Artistic. Modern | Classic | Natural Light & Artificial Light. Jalan Beo No. 78 A, Medan. By appointment only.",
 };
 
 export default function RootLayout({
