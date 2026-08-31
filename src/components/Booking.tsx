@@ -59,9 +59,9 @@ export default function Booking({ selectedPackageProp }: BookingProps) {
 
         // Format message for WhatsApp
         const formattedDate = format(date, 'dd MMMM yyyy');
-        const msg = `Halo Maka Studio! Saya ingin booking sesi foto:%0A%0A*Nama:* ${formData.name}%0A*Paket:* ${selectedPkgData?.name}%0A*Tanggal:* ${formattedDate}%0A*Jam:* ${selectedTime}%0A%0AApakah slot ini masih tersedia?`;
+        const msg = `Halo Lumina Studio Photo! Saya ingin booking sesi foto:%0A%0A*Nama:* ${formData.name}%0A*Paket:* ${selectedPkgData?.name}%0A*Tanggal:* ${formattedDate}%0A*Jam:* ${selectedTime}%0A%0AApakah slot ini masih tersedia?`;
 
-        window.open(`https://wa.me/628973239312?text=${msg}`, '_blank');
+        window.open(`https://wa.me/6281218939696?text=${msg}`, '_blank');
     };
 
     return (
