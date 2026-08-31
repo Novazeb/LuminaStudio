@@ -4,53 +4,74 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import Gallery from "@/components/Gallery";
 import Pricing from "@/components/Pricing";
 import Booking from "@/components/Booking";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
   const [selectedPackage, setSelectedPackage] = useState("bronze");
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Preloader />
       {/* HERO SECTION */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-stone-900">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop"
-            alt="Photography Studio Setup"
+            alt="Lumina Photo Studio Setup"
             fill
-            className="object-cover opacity-60 mix-blend-overlay"
+            className="object-cover opacity-60 mix-blend-overlay scale-105 animate-pulse duration-1000"
+            style={{ animationDuration: '8s' }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-stone-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-stone-900/40" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-lg"
+          >
             Capture Your Best<br className="hidden md:block" /> Moments with<br className="hidden md:block" /> <span className="text-stone-300 italic font-light">Professional Lighting</span>
-          </h1>
-          <p className="font-sans text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto font-light tracking-wide text-balance">
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="font-sans text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto font-light tracking-wide text-balance"
+          >
             Elevate your personal and commercial milestones with editorial-quality photography in a premium studio environment.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <Link
               href="#booking"
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-stone-900 font-medium tracking-widest uppercase text-sm transition-all hover:bg-stone-200"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-stone-900 font-medium tracking-widest uppercase text-sm transition-all hover:bg-stone-200 shadow-lg hover:shadow-xl"
             >
               Reservasi Sekarang
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="#portfolio"
-              className="inline-flex items-center justify-center px-8 py-4 border border-white/30 text-white font-medium tracking-widest uppercase text-sm transition-all hover:bg-white/10"
+              className="inline-flex items-center justify-center px-8 py-4 border border-white/40 text-white font-medium tracking-widest uppercase text-sm transition-all hover:bg-white/10 hover:border-white"
             >
               Lihat Portfolio
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
