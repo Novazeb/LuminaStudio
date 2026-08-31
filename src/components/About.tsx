@@ -16,21 +16,21 @@ export default function About() {
                 </div>
                 <div className="space-y-6">
                     <h3 className="font-sans text-sm tracking-[0.2em] text-primary/60 uppercase">The Visionary</h3>
-                    <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">Novasco</h2>
+                    <h2 className="font-serif text-4xl md:text-5xl text-primary leading-tight">Lumina Studio Photo</h2>
                     <p className="font-sans text-lg font-light leading-relaxed text-stone-600 mb-6">
-                        With over a decade of experience in fashion and editorial photography, Nova brings a meticulous eye for detail to every shot. Her philosophy is simple: capture the authentic essence of the moment through masterful lighting and composition.
+                        With extensive experience in fashion, personal portraiture, and commercial photography, Lumina Studio brings a meticulous eye for detail to every session. Our philosophy is simple: capture the authentic essence of every milestone through masterful lighting, refined styling, and timeless composition.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-stone-200">
                         <div>
                             <Award className="w-6 h-6 text-stone-400 mb-3" />
-                            <h4 className="font-serif text-lg text-primary mb-1">Award Winning</h4>
-                            <p className="text-sm font-light text-stone-500">Recognized by IPA Masters 2023.</p>
+                            <h4 className="font-serif text-lg text-primary mb-1">Award-Winning Standard</h4>
+                            <p className="text-sm font-light text-stone-500">Recognized for excellence in editorial portraiture.</p>
                         </div>
                         <div>
                             <Camera className="w-6 h-6 text-stone-400 mb-3" />
                             <h4 className="font-serif text-lg text-primary mb-1">Expert Lighting</h4>
-                            <p className="text-sm font-light text-stone-500">Mastery in both natural and studio strobe.</p>
+                            <p className="text-sm font-light text-stone-500">Mastery in both natural ambience and studio strobes.</p>
                         </div>
                     </div>
                 </div>
