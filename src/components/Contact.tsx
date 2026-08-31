@@ -1,9 +1,9 @@
-import { MapPin, Mail, Phone, Clock, Instagram } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram } from "lucide-react";
 
 export default function Contact() {
     return (
         <div className="w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 max-w-7xl mx-auto border border-stone-800 bg-stone-900 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 max-w-7xl mx-auto border border-stone-800 bg-stone-900 overflow-hidden shadow-2xl">
 
                 {/* Contact Info */}
                 <div className="p-8 md:p-16 flex flex-col justify-center bg-stone-950">
@@ -25,11 +25,11 @@ export default function Contact() {
                                 Get In Touch
                             </h3>
                             <div className="space-y-4 font-sans text-stone-400 font-light">
-                                <a href="tel:+6282320000396" className="block hover:text-white transition-colors">
-                                    +62 8232 0000 396 (WhatsApp Only)
+                                <a href="https://wa.me/6281218939696" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
+                                    +62 812-1893-9696 (WhatsApp Fast Response)
                                 </a>
-                                <a href="https://www.instagram.com/makastudio.space" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors flex items-center gap-2">
-                                    <Instagram className="w-4 h-4" /> @makastudio.space
+                                <a href="https://www.instagram.com/zebua_1011" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                                    <Instagram className="w-4 h-4" /> @zebua_1011
                                 </a>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ export default function Contact() {
 
                         <div className="pt-8 border-t border-stone-800">
                             <div className="flex gap-4 border border-stone-800 p-2 inline-flex bg-stone-900">
-                                <a href="https://www.instagram.com/makastudio.space" target="_blank" rel="noopener noreferrer" className="p-3 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Instagram">
+                                <a href="https://www.instagram.com/zebua_1011" target="_blank" rel="noopener noreferrer" className="p-3 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Instagram">
                                     <Instagram className="w-5 h-5" />
                                 </a>
                             </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                         allowFullScreen={false}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="Maka Studio Location - Jalan Beo No. 78 A, Medan"
+                        title="Lumina Studio Photo Location - Jalan Beo No. 78 A, Medan"
                     ></iframe>
                 </div>
 
