@@ -87,7 +87,8 @@ export default function Gallery() {
                                     src={img.src}
                                     alt={img.title}
                                     width={800}
-                                    height={1200} // Approximate aspect ratio, height overrides proportionally
+                                    height={1200}
+                                    loading="lazy"
                                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
